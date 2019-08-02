@@ -1,7 +1,0 @@
-User root
-Host aliyun
-HostName 182.92.75.69
-Port 22
-StrictHostKeyChecking no
-IdentityFile ~/.ssh/id_rsa_git
-IdentitiesOnly yes
