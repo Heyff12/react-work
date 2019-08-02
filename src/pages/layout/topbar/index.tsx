@@ -15,7 +15,7 @@ class TopBar extends React.Component<{}, {}> {
         <div className="container">
           <div className={styles.left}>
             <div
-              className={classNames(styles.logo, "icon-LOGO")}
+              className={classNames(styles.logo)}
               onClick={this.goToOverview}
             />
             <div className={styles.nav}>

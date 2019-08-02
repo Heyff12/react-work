@@ -2,9 +2,8 @@ const yargs = require("yargs").argv
 
 const { env } = yargs
 const mockData = {
-  local: "http://localhost:8080", // docker mock data
-  uat: "https://uat-yaya.com/",
   dev: "https://dev-yaya.com/",
+  uat: "https://uat-yaya.com/",
   qauat: "https://qa-yaya.com"
 }
 

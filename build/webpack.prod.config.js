@@ -8,9 +8,6 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const ZipPlugin = require("zip-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-// const GitRevisionPlugin = require("git-revision-webpack-plugin")
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-//   .BundleAnalyzerPlugin
 
 const extractCss = new ExtractTextPlugin({
     filename: "styles-[name]-[hash:7].css",
@@ -21,33 +18,6 @@ const prodWebpackConfig = merge(baseConfig, {
     mode: 'production',
     devtool: "#source-map",
     optimization: {
-        // minimizer: [
-        //     new UglifyJsPlugin({
-        //         uglifyOptions: {
-        //             compress: {
-        //                 warnings: false,
-        //                 screw_ie8: true,
-        //                 sequences: true,
-        //                 dead_code: true,
-        //                 drop_debugger: true,
-        //                 comparisons: true,
-        //                 conditionals: true,
-        //                 evaluate: true,
-        //                 booleans: true,
-        //                 loops: true,
-        //                 unused: true,
-        //                 hoist_funs: true,
-        //                 if_return: true,
-        //                 join_vars: true,
-        //                 cascade: true,
-        //                 drop_console: true,
-        //             },
-        //             output: {
-        //                 comments: false,
-        //             },
-        //         }
-        //     })
-        // ],
         splitChunks: {
             chunks: 'async',
             minSize: 30000,
@@ -75,11 +45,11 @@ const prodWebpackConfig = merge(baseConfig, {
             root: path.resolve(__dirname, "../"),
             verbose: true,
         }),
-        //extractCss,
+        // extractCss,
         new HtmlWebpackPlugin({
             template: "../index.html",
             filename: "index.html",
-            favicon: path.join(__dirname, "../src/assets/favicon.ico"),
+            // favicon: path.join(__dirname, "../src/assets/favicon.ico"),
             inject: true,
             // chunks: ["manifest", "vendor", "demo"],
             // env: process.env.NODE_ENV,

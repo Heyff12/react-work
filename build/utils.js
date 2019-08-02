@@ -1,5 +1,5 @@
 const path = require("path")
-// TODO: change static file's path
+
 exports.assetsPath = function(_path) {
   const assetsSubDirectory = "static"
 
