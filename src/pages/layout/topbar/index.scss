@@ -1,0 +1,142 @@
+@import "../../../styles/variable.scss";
+
+:root {
+  --communityChatIcon: url("@/assets/chat.svg");
+  --communityChatHoverIcon: url("@/assets/chat-hover.svg");
+}
+
+:local {
+  .topbar {
+    background-color: #fafafb;
+
+    :global(.container) {
+      display: flex;
+      align-items: center;
+      height: 85px;
+      position: relative;
+    }
+  }
+
+  .logo {
+    width: 140px;
+    height: 23px;
+    font-size: 24px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .left {
+    display: flex;
+    flex: 5;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .right {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .settingBtn {
+      margin-left: 30px;
+      color: var(--textColor2);
+      cursor: pointer;
+      margin-top: -3px;
+      font-size: 16px;
+      &:hover {
+        color: var(--primaryColor);
+      }
+    }
+  }
+
+  .nav {
+    margin-left: 80px;
+    font-size: var(--displayPrimary);
+    font-weight: bold;
+    ul {
+      li {
+        display: inline-block;
+        margin: 0 18px;
+        a {
+          text-transform: uppercase;
+          color: var(--textColor2);
+          cursor: pointer;
+
+          &.active,
+          &:hover {
+            color: color(var(--textColorPrimary));
+          }
+        }
+      }
+    }
+  }
+  .logout {
+    display: inline-block;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--black);
+    opacity: 0.4;
+    cursor: pointer;
+    :global(i.icon-log-out) {
+      font-size: 23px;
+      vertical-align: middle;
+      margin-right: 11px;
+    }
+  }
+
+  .community {
+    font-size: var(--displayPrimary);
+    font-weight: bold;
+    a {
+      text-transform: uppercase;
+      color: var(--textColor2);
+      cursor: pointer;
+      overflow: hidden;
+      display: block;
+      margin-top: 15px;
+      width: 115px;
+      .icon-community {
+        width: 25px;
+        height: 30px;
+        display: inline-block;
+        float: left;
+        background: var(--communityChatIcon) no-repeat;
+        background-size: 22px auto;
+      }
+      &:hover {
+        color: color(var(--textColorPrimary));
+        .icon-community {
+          background: var(--communityChatHoverIcon) no-repeat 1px 2px;
+          background-size: 20px auto;
+        }
+      }
+      .text-community {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        float: left;
+      }
+    }
+  }
+
+  .user-info {
+    margin-left: 18px;
+    color: var(--textColor2);
+    font-size: var(--displayPrimary);
+    text-transform: capitalize;
+    max-width: 258px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .displayname {
+      display: inline;
+      margin-left: 10px;
+    }
+  }
+}

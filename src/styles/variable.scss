@@ -1,0 +1,58 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --primaryColor: #00acac;
+  --primaryHighlight: #004b64;
+  --backgroundColor: #f3f5f6;
+  --emptyStatusColor: color(var(--black) alpha(0.3));
+  --colorRed: #f84743;
+  --colorYellow: #fec928;
+  --colorGreen: #00d263;
+  --colorBlue: #50b4fb;
+  --textColor1: var(--black);
+  --textColor2: #7c7c7d;
+  --textColor3: #00263c;
+  --textColor4: #466272;
+  --textColor5: #616775;
+  --textColor6: #c3c4c8;
+  --textColorPrimary: var(--primaryColor);
+  --display1: 20px;
+  --display2: 18px;
+  --display3: 16px;
+  --display4: 14px;
+  --display5: 13px;
+  --display6: 12px;
+  --displayPrimary: var(--display4);
+  --displayLarge: 28px;
+  --pageWidth: 1220px;
+  --borderRadius: 4px;
+
+  --maturity-draft-color: rgb(253, 201, 64);
+  --maturity-l0-color: var(--colorGreen);
+  --maturity-l1-color: rgb(73, 149, 61);
+  --maturity-l2-to-l5-color: rgb(76, 144, 191);
+  --maturity-l6-color: #1bb061;
+}
+
+@define-extend box-radius {
+  border-top-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+}
+
+@define-extend reset-component {
+  font-size: var(--display4);
+  line-height: 1.5;
+  color: var(--black);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@define-extend clear-fix {
+  overflow: auto;
+}
+
+@define-extend transition {
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "jsx-no-multiline-js": false,
+    "jsx-alignment": false,
+    "quotemark": true,
+    "ordered-imports": [
+      false
+    ],
+    "jsx-boolean-value": [
+      false
+    ]
+  }
+}
