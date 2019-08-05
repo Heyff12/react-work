@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => (
 
 // type DispatchProps = typeof mapDispatchToProps
 
-type Props = {
+interface Props {
   name: string
   setName: () => void
 } 
@@ -45,12 +45,12 @@ const district =
 
 class My extends React.Component<Props, {}> {
 
-  componentDidMount(){
+  public componentDidMount(){
     console.log("componentDidMount")
     console.log(this.props.name)
   }
 
-  render() {
+  public render() {
     return (
       <>
         <h1>个人主页!</h1>

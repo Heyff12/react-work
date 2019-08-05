@@ -3,10 +3,10 @@ import { NavLink, withRouter } from "react-router-dom";
 import history from "@/utils/history";
 
 class TopBar extends React.Component<{}, {}> {
-  goToOverview = () => {
+  public goToOverview = () => {
     history.push("/overview");
   };
-  render() {
+  public render() {
     return (
       <div >
         <div className="container">

@@ -27,24 +27,24 @@ const mapDispatchToProps = (dispatch) => (
   setPassword:(payload:root) => dispatch(setPassword(payload))
 })
 
-type Props = {
+interface Props {
   name: string
   password: string
   setName: () => void
   setPassword: () => void
 } 
 
-type IState = {
+interface IState {
   checked: boolean
 }
 
 class Home extends React.Component<Props, IState> {
 
-  state:IState={
+  public state:IState={
     checked:true
   }
 
-  render() {
+  public render() {
     console.log("----render------")
 
 

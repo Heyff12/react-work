@@ -6,7 +6,7 @@ import { Route, Switch } from "react-router-dom"
 
 
 class Root extends React.Component<{}, {}> {
-  render() {
+  public render() {
     return (
       <>
         <TopBar />

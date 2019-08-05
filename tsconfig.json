@@ -4,7 +4,7 @@
     "paths": {
       "@/*": ["*"]
     },
-    "lib": ["es6", "es7", "es2017", "dom"],
+    "lib": ["es6", "es7", "es2017", "dom","es2015.promise"],
     "sourceMap": true,
     "noImplicitAny": false,
     "allowJs": true,
@@ -18,5 +18,9 @@
     // "module": "commonjs",
     "target": "es6",
   },
-  "include": ["./src/**/*"]
+  "include": ["./src"],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
