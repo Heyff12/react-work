@@ -11,3 +11,4 @@ stats.json
 *.iml
 .scannerwork
 .storybook-out
+coverage
