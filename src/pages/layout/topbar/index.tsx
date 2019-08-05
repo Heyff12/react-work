@@ -1,9 +1,6 @@
 import * as React from "react";
-import * as classNames from "classnames";
 import { NavLink, withRouter } from "react-router-dom";
 import history from "@/utils/history";
-
-// const styles = require("./index.less");
 
 class TopBar extends React.Component<{}, {}> {
   goToOverview = () => {
@@ -39,5 +36,4 @@ class TopBar extends React.Component<{}, {}> {
   }
 }
 
-//export default withRouter(TopBar);
 export default TopBar;
