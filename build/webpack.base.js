@@ -33,6 +33,7 @@ module.exports = {
               ]
             }
           },
+          // "ts-loader"
           {
             loader: "ts-loader",
             options: {
