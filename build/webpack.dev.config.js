@@ -5,8 +5,9 @@ const merge = require("webpack-merge");
 const proxy = require("./proxy.config")
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 通过 npm 安装
+const theme = require("../src/styles/themeConfig");
 
-const PORT = 2222
+const PORT = 9999
 const _HOST = "0.0.0.0"
 const HOST = `http://${_HOST}`
 const URL = `${HOST}:${PORT}`
@@ -40,6 +41,44 @@ const devWebpackConfig = merge(baseConfig, {
             errors: true
         },
         disableHostCheck: true,
+    },
+    module: {
+        rules: [{
+                test: /\.css$/,
+                use: [{
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    "style-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                            localIdentName: "[path][name]__[local]--[hash:base64:5]"
+                        }
+                    },
+                    {
+                        loader: "postcss-loader",
+                    },
+                    {
+                        loader: "less-loader",
+                        options: {
+                            javascriptEnabled: true,
+                            modifyVars: theme
+                        }
+                    }
+                ],
+            },
+        ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

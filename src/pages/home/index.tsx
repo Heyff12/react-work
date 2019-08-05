@@ -1,5 +1,6 @@
 import * as React from "react";
 import { connect } from 'react-redux'
+import { List, Switch } from 'antd-mobile';
 
 import { Hello } from "../../components/Hello";
 import {setName} from '../../store/actions/my'
@@ -7,6 +8,10 @@ import {setPassword} from '../../store/actions/root'
 
 import {get,set} from 'lodash'
 import {IRedux,my,root} from '../../typed/my.d'
+
+// import './index.less'
+const styles = require("./index.less");
+
 
 const mapStateToProps = (state: IRedux.IRoot) => {
   console.log('----------home--------------mapStateToProps-------------')
@@ -33,7 +38,15 @@ type Props = {
   setPassword: () => void
 } 
 
-class Home extends React.Component<Props, {}> {
+type IState = {
+  checked: boolean
+}
+
+class Home extends React.Component<Props, IState> {
+
+  state:IState={
+    checked:true
+  }
 
   render() {
     // console.log(this.props.match)
@@ -63,11 +76,25 @@ class Home extends React.Component<Props, {}> {
     return (
       <>
         <Hello compiler="TypeScript" framework="React" />
-        <h1>Hello,world!第一次commit提交forCI---second--push--trigger---third-push-trigger-bwg</h1>
-        <h2>name:{this.props.name}</h2>
+        <h1 className={styles.h1}>Hello,world!第一次commit提交forCI---second--push--trigger---third-push-trigger-bwg</h1>
+        <h2 className={styles.h2}>name:{this.props.name}</h2>
         <button onClick={()=>this.props.setName({name:'newNameHAha'})}>设置name</button>
         <h2>password:{this.props.password}</h2>
         <button onClick={()=>this.props.setPassword({password:'666666'})}>设置password</button>
+        <List
+          renderHeader={() => 'Form switch'}
+        >
+          <List.Item
+            extra={<Switch
+              checked={this.state.checked}
+              onChange={() => {
+                this.setState({
+                  checked: !this.state.checked,
+                });
+              }}
+            />}
+          >Off</List.Item>
+        </List>
       </>
     );
   }

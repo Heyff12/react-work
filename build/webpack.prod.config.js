@@ -1,30 +1,27 @@
-const path = require('path');
-const webpack = require('webpack'); // 用于访问内置插件
-const baseConfig = require("./webpack.base");
+const path = require("path");
 const merge = require("webpack-merge");
 
-const CleanWebpackPlugin = require("clean-webpack-plugin")
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
-const ZipPlugin = require("zip-webpack-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const ZipPlugin = require("zip-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const extractCss = new ExtractTextPlugin({
-    filename: "styles-[name]-[hash:7].css",
-    allChunks: true,
-})
+const baseConfig = require("./webpack.base");
+const theme = require("../src/styles/themeConfig");
+const utils = require("./utils");
+
 
 const prodWebpackConfig = merge(baseConfig, {
-    mode: 'production',
+    mode: "production",
     devtool: "#source-map",
     optimization: {
         splitChunks: {
-            chunks: 'async',
+            chunks: "async",
             minSize: 30000,
             minChunks: 1,
             maxAsyncRequests: 5,
             maxInitialRequests: 3,
-            automaticNameDelimiter: '~',
+            automaticNameDelimiter: "~",
             name: true,
             cacheGroups: {
                 vendors: {
@@ -38,25 +35,50 @@ const prodWebpackConfig = merge(baseConfig, {
                 }
             }
         }
-
+    },
+    module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: [MiniCssExtractPlugin.loader, "css-loader"]
+          },
+          {
+            test: /\.less$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              "css-loader",
+              "postcss-loader",
+              "less-loader",
+              {
+                  loader:'less-loader',
+                  options: {
+                      javascriptEnabled: true,
+                      modifyVars: theme
+                  }
+              }
+            ]
+          }
+        ]
     },
     plugins: [
         new CleanWebpackPlugin(["dist"], {
             root: path.resolve(__dirname, "../"),
-            verbose: true,
+            verbose: true
         }),
-        // extractCss,
+        new MiniCssExtractPlugin({
+            filename: utils.assetsPath("css/[name].[contenthash].css")
+        }),
         new HtmlWebpackPlugin({
             template: "../index.html",
             filename: "index.html",
             // favicon: path.join(__dirname, "../src/assets/favicon.ico"),
-            inject: true,
+            inject: true
             // chunks: ["manifest", "vendor", "demo"],
             // env: process.env.NODE_ENV,
         }),
         new ZipPlugin({
-            filename: "react-demo",
-        }),
+            filename: "react-demo"
+        })
     ]
-})
+});
 module.exports = prodWebpackConfig;

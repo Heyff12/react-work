@@ -1,5 +1,6 @@
 import * as React from "react";
 import { connect } from 'react-redux'
+import { Picker, List, WhiteSpace } from 'antd-mobile';
 import {setName} from '../../store/actions/my'
 import {IRedux,my} from '../../typed/my.d'
 
@@ -24,6 +25,27 @@ type Props = {
   setName: () => void
 } 
 
+const district = 
+  [
+    {
+      label: '2013',
+      value: '2013',
+    },
+    {
+      label: '2014',
+      value: '2014',
+    },
+    {
+      label: '春',
+      value: '春',
+    },
+    {
+      label: '夏',
+      value: '夏',
+    },
+  ]
+
+
 class My extends React.Component<Props, {}> {
 
   componentDidMount(){
@@ -41,6 +63,9 @@ class My extends React.Component<Props, {}> {
         <p>ip更换后测试--jenkins ipd</p>
         <h2>name:{this.props.name}</h2>
         <button onClick={()=>this.props.setName({name:'newSecondNameHAha'})}>设置name</button>
+        <Picker data={district} cols={1}  className="forss">
+          <List.Item arrow="horizontal">Single</List.Item>
+        </Picker>
       </>
     );
   }

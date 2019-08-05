@@ -3,7 +3,7 @@ import * as classNames from "classnames";
 import { NavLink, withRouter } from "react-router-dom";
 import history from "@/utils/history";
 
-const styles = require("./index.scss");
+// const styles = require("./index.less");
 
 class TopBar extends React.Component<{}, {}> {
   goToOverview = () => {
@@ -11,22 +11,22 @@ class TopBar extends React.Component<{}, {}> {
   };
   render() {
     return (
-      <div className={styles.topbar}>
+      <div >
         <div className="container">
-          <div className={styles.left}>
+          <div >
             <div
-              className={classNames(styles.logo)}
+              
               onClick={this.goToOverview}
             />
-            <div className={styles.nav}>
+            <div >
               <ul>
                 <li>
-                  <NavLink activeClassName={styles.active} to="/">
+                  <NavLink  to="/">
                     home
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink activeClassName={styles.active} to="/my">
+                  <NavLink  to="/my">
                     MY
                   </NavLink>
                 </li>
