@@ -2,7 +2,7 @@
 
 // const history: History = createHashHistory()
 
-import { createBrowserHistory, History } from "history";
+import { createBrowserHistory, History } from "history"
 
-const history:History = createBrowserHistory();
-export default history;
+const history: History = createBrowserHistory()
+export default history

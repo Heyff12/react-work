@@ -33,7 +33,6 @@ module.exports = {
               ]
             }
           },
-          // "ts-loader"
           {
             loader: "ts-loader",
             options: {
@@ -47,7 +46,7 @@ module.exports = {
         ],
         exclude: /node_modules/
       },
-      
+
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: "url-loader",

@@ -1,15 +1,14 @@
-import { handleActions, ReducerMap } from "redux-actions";
-import { Map, fromJS } from "immutable";
-import { IRedux, Iroot } from "../../typed/my.d";
+import { handleActions, ReducerMap } from "redux-actions"
+import { Map, fromJS } from "immutable"
+import { IRedux, Iroot } from "../../typed/my"
 
-import { Root } from "../actionTypes";
+import { Root } from "../actionTypes"
 
 const myRoot: IRedux.IRoot = Map({
   userInfo: Map({
-    password: "123445"
-  })
-});
-
+    password: "123445",
+  }),
+})
 
 const actionHandle: ReducerMap<IRedux.IRoot, any> = {
   [Root.SET_PASSWORD]: (
@@ -19,8 +18,8 @@ const actionHandle: ReducerMap<IRedux.IRoot, any> = {
     return state.setIn(
       ["userInfo", "password"],
       fromJS(action.payload.password)
-    );
-  }
-};
+    )
+  },
+}
 
-export default handleActions(actionHandle, myRoot);
+export default handleActions(actionHandle, myRoot)
