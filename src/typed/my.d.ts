@@ -1,13 +1,13 @@
 import { Map, fromJS } from "immutable";
 
 
-export interface root {
+export interface Iroot {
     userInfo: {
         password: string
     }
 }
 
-export interface my {
+export interface Imy {
     name: string;
 }
 
@@ -19,11 +19,11 @@ export interface my {
 export declare namespace IRedux {
 
     interface IRoot extends Map<string, any> {
-        toJS(): root
+        toJS(): Iroot
     }
 
     interface IMy extends Map<string, any> {
-        toJS(): my
+        toJS(): Imy
     }
 
     // interface IMy {

@@ -6,7 +6,7 @@ import { Hello } from "../../components/Hello";
 import {setName} from "../../store/actions/my"
 import {setPassword} from "../../store/actions/root"
 
-import {IRedux,my,root} from "../../typed/my.d"
+import {IRedux,Imy,Iroot} from "../../typed/my.d"
 
 const styles = require("./index.less");
 
@@ -23,22 +23,22 @@ const mapStateToProps = (state: IRedux.IRoot) => {
 
 const mapDispatchToProps = (dispatch) => (
   {
-  setName: (payload:my) => dispatch(setName(payload)),
-  setPassword:(payload:root) => dispatch(setPassword(payload))
+  setName: (payload:Imy) => () => dispatch(setName(payload)),
+  setPassword:(payload:Iroot) => () => dispatch(setPassword(payload))
 })
 
-interface Props {
+interface IProps {
   name: string
   password: string
-  setName: () => void
-  setPassword: () => void
+  setName: () => () => void
+  setPassword: () => () => void
 } 
 
 interface IState {
   checked: boolean
 }
 
-class Home extends React.Component<Props, IState> {
+class Home extends React.Component<IProps, IState> {
 
   public state:IState={
     checked:true
@@ -53,9 +53,9 @@ class Home extends React.Component<Props, IState> {
         <Hello compiler="TypeScript" framework="React" />
         <h1 className={styles.h1}>Hello,world!第一次commit提交forCI---second--push--trigger---third-push-trigger-bwg</h1>
         <h2 className={styles.h2}>name:{this.props.name}</h2>
-        <button onClick={()=>this.props.setName({name:"newNameHAha"})}>设置name</button>
+        <button onClick={this.props.setName({name:"newNameHAha"})}>设置name</button>
         <h2>password:{this.props.password}</h2>
-        <button onClick={()=>this.props.setPassword({password:"666666"})}>设置password</button>
+        <button onClick={this.props.setPassword({password:"666666"})}>设置password</button>
         <List
           renderHeader={() => "Form switch"}
         >

@@ -9,6 +9,8 @@
     "jsx-alignment": false,
     "quotemark": true,
     "jsx-no-lambda":false,
+    "no-console":false,
+    "no-namespace":false,
     "ordered-imports": [
       false
     ],
