@@ -1,5 +1,5 @@
 import { handleActions, ReducerMap } from "redux-actions";
-import { Map, List, fromJS } from "immutable";
+import { Map, fromJS } from "immutable";
 
 import { My } from "../actionTypes";
 import { IRedux,Imy } from "../../typed/my.d";

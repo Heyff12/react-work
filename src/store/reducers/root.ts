@@ -1,6 +1,5 @@
 import { handleActions, ReducerMap } from "redux-actions";
 import { Map, fromJS } from "immutable";
-// import {set} from 'lodash'
 import { IRedux, Iroot } from "../../typed/my.d";
 
 import { Root } from "../actionTypes";
