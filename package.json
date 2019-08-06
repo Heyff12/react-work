@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "src/**/*.{js,ts,tsx,less}": [
+    "src/**/*.{js,ts,tsx}": [
       "prettier --write",
       "tslint -c tslint.json --fix",
       "git add"
@@ -28,8 +28,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
+    "@babel/parser": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@babel/types": "^7.5.5",
     "@types/classnames": "^2.2.9",
     "@types/enzyme": "^3.10.3",
     "@types/history": "^4.7.2",
