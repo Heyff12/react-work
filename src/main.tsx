@@ -4,7 +4,6 @@ import { Provider } from "react-redux"
 import { ConnectedRouter } from "connected-react-router"
 import "lib-flexible"
 const FastClick = require("fastclick") // 解决300ms延迟
-// import FastClick = require("fastclick")
 
 import history from "./utils/history"
 import Root from "./Root"

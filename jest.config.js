@@ -11,8 +11,9 @@ module.exports = {
         // "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "moduleNameMapper": {
-        // "^@/(.*)$": "<rootDir>/src/$1",
-        "\\.(css|less)$": '<rootDiv>/tests/__mock__/styleMock.js',
+        "^@/(.*)$": "<rootDir>/src/$1",
+        "\\.(css|less)$": 'identity-obj-proxy',
+        // "\\.(css|less)$": '<rootDiv>/tests/__mock__/styleMock.js',
         "\\.(jpg|png|jpeg|svg|gif|otf|webp|eot|ttf|woff|woff2|mp4)$": '<rootDiv>/tests/__mock__/fileMock.js',
     },
     "testPathIgnorePatterns": ['/node_modules'],
