@@ -13,8 +13,8 @@ module.exports = {
     "moduleNameMapper": {
         "^@/(.*)$": "<rootDir>/src/$1",
         "\\.(css|less)$": 'identity-obj-proxy',
-        // "\\.(css|less)$": '<rootDiv>/tests/__mock__/styleMock.js',
-        "\\.(jpg|png|jpeg|svg|gif|otf|webp|eot|ttf|woff|woff2|mp4)$": '<rootDiv>/tests/__mock__/fileMock.js',
+        // "\\.(css|less)$": '<rootDir>/tests/__mock__/styleMock.js',
+        "\\.(jpg|png|jpeg|svg|gif|otf|webp|eot|ttf|woff|woff2|mp4)$": '<rootDir>/tests/__mock__/fileMock.js',
     },
     "testPathIgnorePatterns": ['/node_modules'],
     "moduleFileExtensions": [

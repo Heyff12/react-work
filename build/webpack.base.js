@@ -20,6 +20,16 @@ module.exports = {
         test: /\.js$/,
         loader: "source-map-loader"
       },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.(ts|tsx)$/,
+      //   loader: 'eslint-loader',
+      //   include: [path.resolve(__dirname, '../src')], // 指定检查的目录
+      //   exclude: /node_modules/,
+      //   options:{
+      //       fix: true
+      //   }
+      // },
       {
         test: /\.tsx?$/,
         use: [

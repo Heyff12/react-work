@@ -83,10 +83,11 @@ const devWebpackConfig = merge(baseConfig, {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new ForkTsCheckerWebpackPlugin({
-            tsconfig: path.resolve(__dirname, "../tsconfig.json"),
-            tslint: path.resolve(__dirname, "../tslint.json"),
-        }),
+        // new ForkTsCheckerWebpackPlugin({
+        //   eslint: path.resolve(__dirname, "../eslintrc.js")
+        //     // tsconfig: path.resolve(__dirname, "../tsconfig.json"),
+        //     // tslint: path.resolve(__dirname, "../tslint.json"),
+        // }),
         new HtmlWebpackPlugin({
             template: '../index.html'
         })

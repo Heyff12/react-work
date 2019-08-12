@@ -22,3 +22,9 @@ job2:
 ```
 
 
+```
+//生命周期
+Home.prototype.componentDidMount
+//方法
+wrapper.instance().func
+```

@@ -1,15 +1,17 @@
-import { shallow } from "enzyme"
-import * as React from "react"
-import Hello from "./Hello"
+/** @format */
 
-describe("Hello", () => {
-  it("show recoret", () => {
-    const props = {
-      compiler: "hahah",
-      framework: "heheh",
-    }
+import {shallow} from 'enzyme'
+import * as React from 'react'
+import Hello from './Hello'
 
-    const wrapper = shallow(<Hello {...props} />)
-    expect(wrapper.html()).toMatch("hahah")
-  })
+describe('Hello', () => {
+    it('show recoret', () => {
+        const props = {
+            compiler: 'hahah',
+            framework: 'heheh',
+        }
+
+        const wrapper = shallow(<Hello {...props} />)
+        expect(wrapper.html()).toMatch('hahah')
+    })
 })
