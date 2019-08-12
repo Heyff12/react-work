@@ -49,7 +49,7 @@ module.exports = {
         'MemberExpression':1,
         'ObjectExpression':1,
         'ImportDeclaration':1,
-        // 'outIIFEBody':1,
+        'outerIIFEBody':1,
       }
     ],
     'default-case':2,
