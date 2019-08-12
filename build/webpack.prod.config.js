@@ -40,10 +40,15 @@ const prodWebpackConfig = merge(baseConfig, {
             cacheGroups: {
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
+                    name:'chunk-vendors',
+                    trunks:'all',
+                    reuseExistingChunk: true,
                     priority: -10
                 },
-                default: {
+                common: {
+                    name:'chunk-common',
                     minChunks: 2,
+                    trunks:'all',
                     priority: -20,
                     reuseExistingChunk: true
                 }
@@ -89,7 +94,7 @@ const prodWebpackConfig = merge(baseConfig, {
             inject:
         }),
         new ZipPlugin({
-            filename: "react-demo"
+            filename: "react-work"
         })
     ]
 });

@@ -7,7 +7,7 @@ module.exports =  {
   "jsxBracketSameLine": true,
   "arrowParens": "avoid",
   "insertPragma": true,
-  "tabWidth": 4,
-  "useTabs": false,
+  // "tabWidth": 4,
+  // "useTabs": false,
   "parser": "typescript"
 }

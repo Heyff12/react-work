@@ -3,13 +3,13 @@
 import {Map} from 'immutable'
 
 export interface Iroot {
-    userInfo: {
-        password: string
-    }
+  userInfo: {
+    password: string
+  }
 }
 
 export interface Imy {
-    name: string
+  name: string
 }
 
 // interface IRedux {
@@ -18,22 +18,19 @@ export interface Imy {
 // }
 
 declare namespace IRedux {
-    interface IRoot extends Map<string, any> {
-        toJS(): Iroot
+  interface IRoot extends Map<string, any> {
+    toJS(): Iroot
 
-        get<K extends keyof Iroot>(key: K): Iroot[K]
+    get<K extends keyof Iroot>(key: K): Iroot[K]
 
-        set<K extends keyof Iroot>(
-            key: K,
-            value: Iroot[K],
-        ): this & Readonly<Iroot>
-    }
+    set<K extends keyof Iroot>(key: K, value: Iroot[K]): this & Readonly<Iroot>
+  }
 
-    interface IMy extends Map<string, any> {
-        toJS(): Imy
-    }
+  interface IMy extends Map<string, any> {
+    toJS(): Imy
+  }
 
-    // interface IMy {
-    //     name: string;
-    // }
+  // interface IMy {
+  //     name: string;
+  // }
 }

@@ -16,10 +16,10 @@ window.FastClick = FastClick
 import './styles/app.less'
 
 ReactDOM.render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <Root />
-        </ConnectedRouter>
-    </Provider>,
-    document.getElementById('app'),
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Root />
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('app'),
 )

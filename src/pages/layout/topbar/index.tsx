@@ -6,30 +6,30 @@ import {NavLink} from 'react-router-dom'
 import history from '@/utils/history'
 
 class TopBar extends React.Component<{}, {}> {
-    public goToOverview = () => {
-        history.push('/overview')
-    }
-    public render() {
-        return (
+  public goToOverview = () => {
+    history.push('/overview')
+  }
+  public render() {
+    return (
+      <div>
+        <div className="container">
+          <div>
+            <div onClick={this.goToOverview} />
             <div>
-                <div className="container">
-                    <div>
-                        <div onClick={this.goToOverview} />
-                        <div>
-                            <ul>
-                                <li>
-                                    <NavLink to="/">home</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/my">MY</NavLink>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+              <ul>
+                <li>
+                  <NavLink to="/">home</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/my">MY</NavLink>
+                </li>
+              </ul>
             </div>
-        )
-    }
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default TopBar

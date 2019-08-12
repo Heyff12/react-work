@@ -17,21 +17,19 @@ import history from '../utils/history'
 // }
 let store
 if (process.env.NODE_ENV === 'development') {
-    const composeEnhancers =
-        typeof window === 'object' &&
-        (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-            ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
-            : compose
+  const composeEnhancers =
+    typeof window === 'object' &&
+    (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+      ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+      : compose
 
-    const enhancer = composeEnhancers(
-        applyMiddleware(routerMiddleware(history)),
-    )
-    store = createStore(createRootReducer(history), {}, enhancer)
+  const enhancer = composeEnhancers(applyMiddleware(routerMiddleware(history)))
+  store = createStore(createRootReducer(history), {}, enhancer)
 } else {
-    store = createStore(
-        createRootReducer(history),
-        {},
-        compose(applyMiddleware(routerMiddleware(history))),
-    )
+  store = createStore(
+    createRootReducer(history),
+    {},
+    compose(applyMiddleware(routerMiddleware(history))),
+  )
 }
 export default store

@@ -9,7 +9,7 @@ module.exports = {
   plugins: ['@typescript-eslint'], //定义了该eslint文件所依赖的插件
   parserOptions: {
     //指定ESLint可以解析JSX语法
-    ecmaVersion: 2019,
+    ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
@@ -35,6 +35,28 @@ module.exports = {
     "@typescript-eslint/no-var-requires":0,
     "@typescript-eslint/no-explicit-any":0,
     // "@typescript-eslint/interface-name-prefix":[2,'always']
-    "@typescript-eslint/interface-name-prefix":0
+    "@typescript-eslint/interface-name-prefix":0,
+    'eqeqeq':[
+      'error',
+      'always',
+      {
+        null:'ignore'
+      }
+    ],
+    'indent':[
+      'error',2,{
+        'SwitchCase':1,
+        'MemberExpression':1,
+        'ObjectExpression':1,
+        'ImportDeclaration':1,
+        // 'outIIFEBody':1,
+      }
+    ],
+    'default-case':2,
+    'no-constant-condition':2,
+    'no-return-await':2,
+    'no-tabs':2,
+    'quotes':[2,'single'],
+    'no-console':0
   },
 }

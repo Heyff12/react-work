@@ -14,8 +14,8 @@ import root from './root'
 // let initState = Immutable.fromJS({ location: undefined })
 
 export default history =>
-    combineReducers({
-        my,
-        root,
-        router: connectRouter(history),
-    })
+  combineReducers({
+    my,
+    root,
+    router: connectRouter(history),
+  })
