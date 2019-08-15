@@ -13,6 +13,12 @@ import store from './store'
 
 window.FastClick = FastClick
 
+/* eslint-disable no-unused-vars */
+var vConsole =
+  process.env.NODE_ENV === 'development' ? require('./vconsole') : ''
+console.log(vConsole)
+/* eslint-disable no-new */
+
 import './styles/app.less'
 
 ReactDOM.render(
