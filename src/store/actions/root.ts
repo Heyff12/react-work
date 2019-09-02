@@ -3,7 +3,7 @@
 import {createAction} from 'redux-actions'
 
 import {Root} from '../actionTypes'
-import {Iroot} from '../../typed/my.d'
+import {Iroot} from '../../typed/index'
 
 export const setPassword = createAction(
   Root.SET_PASSWORD,

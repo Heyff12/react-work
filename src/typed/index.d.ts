@@ -2,13 +2,13 @@
 
 import {Map} from 'immutable'
 
-export interface Iroot {
+declare interface Iroot {
   userInfo: {
     password: string
   }
 }
 
-export interface Imy {
+declare interface Imy {
   name: string
 }
 

@@ -2,7 +2,7 @@
 
 import {handleActions, ReducerMap} from 'redux-actions'
 import {Map, fromJS} from 'immutable'
-import {IRedux, Iroot} from '../../typed/my'
+import {IRedux, Iroot} from '../../typed/index'
 
 import {Root} from '../actionTypes'
 

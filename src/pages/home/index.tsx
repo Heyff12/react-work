@@ -9,7 +9,7 @@ import {setName} from '../../store/actions/my'
 import {setPassword} from '../../store/actions/root'
 import RoutePrompt from '../../components/routePrompt'
 
-import {IRedux, Imy, Iroot} from '../../typed/my.d'
+import {IRedux, Imy, Iroot} from '../../typed/index'
 
 const styles = require('./index.less')
 

@@ -4,7 +4,7 @@ import * as React from 'react'
 import {connect} from 'react-redux'
 import {Picker, List} from 'antd-mobile'
 import {setName} from '../../store/actions/my'
-import {IRedux, Imy} from '../../typed/my.d'
+import {IRedux, Imy} from '../../typed/index'
 
 const mapStateToProps = (state: IRedux.IMy) => {
   return {

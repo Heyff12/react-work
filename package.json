@@ -14,6 +14,7 @@
   "keywords": [],
   "author": "yaya",
   "license": "ISC",
+  "types": "src/typed/index.d.ts",
   "lint-staged": {
     "src/**/*.{js,ts,tsx}": [
       "prettier --write",

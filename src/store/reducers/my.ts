@@ -4,7 +4,7 @@ import {handleActions, ReducerMap} from 'redux-actions'
 import {Map, fromJS} from 'immutable'
 
 import {My} from '../actionTypes'
-import {IRedux, Imy} from '../../typed/my'
+import {IRedux} from '../../typed/index'
 
 const myState: IRedux.IMy = Map({
   name: 'haha',
