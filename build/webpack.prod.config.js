@@ -41,14 +41,14 @@ const prodWebpackConfig = merge(baseConfig, {
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
                     name:'chunk-vendors',
-                    trunks:'all',
+                    // trunks:'all',
                     reuseExistingChunk: true,
                     priority: -10
                 },
                 common: {
                     name:'chunk-common',
                     minChunks: 2,
-                    trunks:'all',
+                    // trunks:'all',
                     priority: -20,
                     reuseExistingChunk: true
                 }
@@ -91,7 +91,7 @@ const prodWebpackConfig = merge(baseConfig, {
             template: "../index.html",
             filename: "index.html",
             // favicon: path.join(__dirname, "../src/assets/favicon.ico"),
-            inject:
+            inject:true,
         }),
         new ZipPlugin({
             filename: "react-work"

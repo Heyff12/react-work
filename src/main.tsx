@@ -11,12 +11,13 @@ import history from './utils/history'
 import Root from './Root'
 import store from './store'
 
-window.FastClick = FastClick
+window['FastClick'] = FastClick
+
+console.log(';----------------------------')
+console.log(process.env.NODE_ENV)
 
 /* eslint-disable no-unused-vars */
-var vConsole =
-  process.env.NODE_ENV !== 'development' ? require('./vconsole') : ''
-console.log(vConsole)
+process.env.NODE_ENV !== 'development' && require('./vconsole')
 /* eslint-disable no-new */
 
 import './styles/app.less'
