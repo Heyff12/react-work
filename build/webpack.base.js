@@ -3,6 +3,10 @@ const webpack = require("webpack"); // 用于访问内置插件
 const utils = require("./utils");
 const resolve = require("./webpack.resolve.config");
 
+const env = process.env.NODE_ENV || 'dev'
+console.log(env)
+const envFile = `../config/${env}.env`
+
 module.exports = {
   entry: "../src/main.tsx",
   output: {
@@ -86,5 +90,11 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins:[
+    new webpack.DefinePlugin({
+      // self_env: require('../config/dev.env')
+      self_env: require(envFile)
+    })
+  ],
 };

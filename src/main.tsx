@@ -13,8 +13,9 @@ import store from './store'
 
 window['FastClick'] = FastClick
 
-console.log(';----------------------------')
+console.log(';-----main.tsx-----------------------')
 console.log(process.env.NODE_ENV)
+console.log(self_env)
 
 /* eslint-disable no-unused-vars */
 process.env.NODE_ENV !== 'development' && require('./vconsole')
