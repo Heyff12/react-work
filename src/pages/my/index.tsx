@@ -6,6 +6,8 @@ import {Picker, List} from 'antd-mobile'
 import {setName} from '../../store/actions/my'
 import {IRedux, Imy} from '../../typed/index'
 
+import UploadTest from '../upload'
+
 const mapStateToProps = (state: IRedux.IMy) => {
   return {
     name: state.my.getIn(['name']),
@@ -63,6 +65,7 @@ class My extends React.Component<IProps, {}> {
         <Picker data={district} cols={1} className="forss">
           <List.Item arrow="horizontal">Single</List.Item>
         </Picker>
+        <UploadTest />
       </>
     )
   }
