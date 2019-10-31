@@ -18,6 +18,10 @@
     // "module": "commonjs",
     "target": "es2015",
     // "declaration": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "global.d.ts"
+    ],
   },
   "include": ["./src"],
   "exclude": [
