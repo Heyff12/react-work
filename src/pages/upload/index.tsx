@@ -20,11 +20,28 @@ const initUploadState = {
 
 class UploadTest extends React.Component<{}, {}> {
   public state = initUploadState
+  public fileEl: any = React.createRef()
+  public fileFormEl: any = React.createRef()
+
+  public clearFile = () => {
+    const {fileEl, fileFormEl} = this
+    if (!fileEl) {
+      return
+    }
+    const dom = fileEl.current
+    if (dom) {
+      dom.value = null
+      //兼容ie
+      fileFormEl && fileFormEl.current && fileFormEl.current.reset()
+    }
+  }
 
   public uploadHandle = (e: any) => {
     const file = e.target.files[0]
     const {name, type, size} = file
     const isExcel = EXCEL_TYPE.includes(type)
+    //去除 input file 不能重复上传
+    this.clearFile()
     if (!isExcel) {
       this.setState({
         canSureUpload: false,
@@ -63,15 +80,31 @@ class UploadTest extends React.Component<{}, {}> {
       window.navigator.msSaveOrOpenBlob(blob, filename)
       return
     }
-    let downloadElement = document.createElement('a')
-    document.body.appendChild(downloadElement)
-    let href = window.URL.createObjectURL(blob)
-    downloadElement.href = href
-    downloadElement.download = filename
-    downloadElement.style.display = 'none'
-    downloadElement.click()
-    document.body.removeChild(downloadElement)
-    window.URL.revokeObjectURL(href)
+    let reader = new FileReader()
+    reader.readAsDataURL(blob)
+    reader.onload = (e: any) => {
+      // 防止异步
+      let downloadElement = document.createElement('a')
+      document.body.appendChild(downloadElement)
+      // let href = window.URL.createObjectURL(blob)
+      let href = e.target.result
+      downloadElement.href = href
+      downloadElement.target = '_blank'
+      downloadElement.download = filename
+      downloadElement.style.display = 'none'
+      downloadElement.click()
+      document.body.removeChild(downloadElement)
+      // window.URL.revokeObjectURL(href)
+    }
+    // let downloadElement = document.createElement('a')
+    // document.body.appendChild(downloadElement)
+    // let href = window.URL.createObjectURL(blob)
+    // downloadElement.href = href
+    // downloadElement.download = filename
+    // downloadElement.style.display = 'none'
+    // downloadElement.click()
+    // document.body.removeChild(downloadElement)
+    // window.URL.revokeObjectURL(href)
   }
 
   public uploadSureHandle = () => {
@@ -144,15 +177,18 @@ class UploadTest extends React.Component<{}, {}> {
   public render() {
     return (
       <div>
-        <input
-          type="file"
-          className="uploadInput"
-          alt=""
-          title=""
-          name="upload"
-          onChange={this.uploadHandle}
-          accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        />
+        <form action="" ref={this.fileFormEl}>
+          <input
+            ref={this.fileEl}
+            type="file"
+            className="uploadInput"
+            alt=""
+            title=""
+            name="upload"
+            onChange={this.uploadHandle}
+            accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          />
+        </form>
       </div>
     )
   }

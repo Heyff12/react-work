@@ -23,6 +23,9 @@ class TopBar extends React.Component<{}, {}> {
                 <li>
                   <NavLink to="/my">MY</NavLink>
                 </li>
+                <li>
+                  <NavLink to="/upload">Upload</NavLink>
+                </li>
               </ul>
             </div>
           </div>
