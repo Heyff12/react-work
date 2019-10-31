@@ -189,6 +189,7 @@ class UploadTest extends React.Component<{}, {}> {
             accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           />
         </form>
+        <p>备注：ie 样式兼容</p>
       </div>
     )
   }
