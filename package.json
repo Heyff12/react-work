@@ -118,16 +118,21 @@
     "classnames": "^2.2.6",
     "connected-react-router": "^6.5.2",
     "fastclick": "^1.0.6",
+    "github-markdown-css": "^3.0.1",
+    "highlight.js": "^9.16.2",
     "history": "^4.7.2",
     "immutable": "^4.0.0-rc.12",
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
+    "marked": "^0.7.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-markdown": "^4.2.2",
     "react-redux": "^6.0.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
-    "redux": "^4.0.4"
+    "redux": "^4.0.4",
+    "remark-toc": "^6.0.0"
   }
 }
