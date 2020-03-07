@@ -49,6 +49,11 @@ class Home extends React.Component<IProps, IState> {
 
     return (
       <>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: '测试文本，lilnong'.replace(/(测试文本)/g, '<i>$1</i>'),
+          }}
+        />
         <Hello compiler="TypeScript" framework="React" />
         <h1 className={styles.h1}>
           Hello,world!第一次commit提交forCI---second--push--trigger---third-push-trigger-bwg
