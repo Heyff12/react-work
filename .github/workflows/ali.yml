@@ -30,12 +30,12 @@ jobs:
       env:
         CI: true
     - name: ssh Deploy
-        uses: easingthemes/ssh-deploy@v2.1.2
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-          ARGS: "-avz --delete"
-          SOURCE: "dist/"
-          TARGET: "/nodeweb/reactWork"
+      uses: easingthemes/ssh-deploy@v2.1.2
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+        ARGS: "-avz --delete"
+        SOURCE: "dist/"
+        TARGET: "/nodeweb/reactWork"
