@@ -29,6 +29,9 @@ class TopBar extends React.Component<{}, {}> {
                 <li>
                   <NavLink to="/markdown">Markdown</NavLink>
                 </li>
+                <li>
+                  <NavLink to="/myAnimate">MyAnimate</NavLink>
+                </li>
               </ul>
             </div>
           </div>
