@@ -58,6 +58,8 @@ class Home extends React.Component<IProps, IState> {
         <h1 className={styles.h1}>
           Hello,world!第一次commit提交forCI---second--push--trigger---third-push-trigger-bwg
           Github Actons Deploy
+          <br />
+          docker nignx
         </h1>
         <h2 className={styles.h2}>name:{this.props.name}</h2>
         <button onClick={this.props.setName({name: 'newNameHAha'})}>
