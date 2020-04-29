@@ -60,6 +60,8 @@ class Home extends React.Component<IProps, IState> {
           Github Actons Deploy
           <br />
           docker nignx
+          <br />
+          new path
         </h1>
         <h2 className={styles.h2}>name:{this.props.name}</h2>
         <button onClick={this.props.setName({name: 'newNameHAha'})}>
