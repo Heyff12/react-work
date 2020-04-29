@@ -38,4 +38,4 @@ jobs:
         REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
         ARGS: "-avz --delete"
         SOURCE: "dist/"
-        TARGET: "/nodeweb/reactWork"
+        TARGET: "/project/nodeweb/reactWork"
