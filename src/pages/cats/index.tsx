@@ -9,6 +9,8 @@ interface IState {
   catsList: any[]
 }
 
+let catNum = 1
+
 class Cats extends React.Component<{}, {}> {
   public state: IState = {
     catsList: [],
@@ -35,26 +37,23 @@ class Cats extends React.Component<{}, {}> {
 
   public createCat = () => {
     const postData = {
-      name: 'katty',
-      age: 3,
-      breed: false,
+      name: `katty_${++catNum}`,
+      age: catNum,
+      breed: true,
     }
     client
-      .mutate({mutation: createCatMongoMutation, variables: {...postData}})
+      .mutate({
+        mutation: createCatMongoMutation,
+        variables: {createCatMongoInput: postData},
+      })
       .then(res => {
         console.log(res)
-        // const {getCatsMongo} = res.data
-        // console.log(getCatsMongo)
         this.getCats()
       })
+      .catch(err => {
+        console.log(err)
+      })
   }
-
-  // public getCats = async() => {
-  //   const { data } = await client.query({
-  //     query: getCatsMongoQuery
-  //   })
-  //   console.log(data)
-  // }
 
   public renderList = () => {
     const {catsList} = this.state
