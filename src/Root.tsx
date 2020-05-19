@@ -7,6 +7,7 @@ import My from './pages/my/index'
 import UploadTest from './pages/upload/index'
 import Markdown from './pages/markdown/index'
 import MyAnimate from './pages/animate/index'
+import Cats from './pages/cats/index'
 import {Route, Switch} from 'react-router-dom'
 
 class Root extends React.Component<{}, {}> {
@@ -20,6 +21,7 @@ class Root extends React.Component<{}, {}> {
           <Route path="/upload" component={UploadTest} />
           <Route path="/markdown" component={Markdown} />
           <Route path="/myAnimate" component={MyAnimate} />
+          <Route path="/cats" component={Cats} />
         </Switch>
       </>
     )
