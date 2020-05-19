@@ -23,11 +23,3 @@ export const createCatMongoMutation = gql`
     }
   }
 `
-
-export const getRatesQuery = gql`
-  {
-    rates(currency: "USD") {
-      currency
-    }
-  }
-`
