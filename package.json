@@ -129,7 +129,7 @@
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.15",
     "lodash-es": "^4.17.15",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-markdown": "^4.2.2",
